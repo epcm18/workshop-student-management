@@ -1,0 +1,72 @@
+[
+  {
+    "id": "S001",
+    "name": "Amaya Perera",
+    "lecturer": "Dr. Nimal Fernando",
+    "nic": "982345678V",
+    "email": "amaya.perera@example.com"
+  },
+  {
+    "id": "S002",
+    "name": "Kasun Silva",
+    "lecturer": "Dr. Nimal Fernando",
+    "nic": "972456789V",
+    "email": "kasun.silva@example.com"
+  },
+  {
+    "id": "S003",
+    "name": "Ishara Jayasinghe",
+    "lecturer": "Prof. Malathi Abeysekera",
+    "nic": "993567890V",
+    "email": "ishara.jayasinghe@example.com"
+  },
+  {
+    "id": "S004",
+    "name": "Tharindu Fernando",
+    "lecturer": "Prof. Malathi Abeysekera",
+    "nic": "991234567V",
+    "email": "tharindu.fernando@example.com"
+  },
+  {
+    "id": "S005",
+    "name": "Rashmi Weerasinghe",
+    "lecturer": "Dr. Chaminda Gunawardena",
+    "nic": "992345678V",
+    "email": "rashmi.weerasinghe@example.com"
+  },
+  {
+    "id": "S006",
+    "name": "Nuwan Jayawardena",
+    "lecturer": "Dr. Chaminda Gunawardena",
+    "nic": "971234567V",
+    "email": "nuwan.jayawardena@example.com"
+  },
+  {
+    "id": "S007",
+    "name": "Dinithi Rajapaksha",
+    "lecturer": "Dr. Ruwan Wijesinghe",
+    "nic": "995678901V",
+    "email": "dinithi.rajapaksha@example.com"
+  },
+  {
+    "id": "S008",
+    "name": "Sahan Ekanayake",
+    "lecturer": "Dr. Ruwan Wijesinghe",
+    "nic": "981234590V",
+    "email": "sahan.ekanayake@example.com"
+  },
+  {
+    "id": "S009",
+    "name": "Pavani Karunaratne",
+    "lecturer": "Dr. Isuru Ranasinghe",
+    "nic": "996543210V",
+    "email": "pavani.karunaratne@example.com"
+  },
+  {
+    "id": "S010",
+    "name": "Ravindu Bandara",
+    "lecturer": "Dr. Isuru Ranasinghe",
+    "nic": "982345679V",
+    "email": "ravindu.bandara@example.com"
+  }
+]
