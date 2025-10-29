@@ -9,8 +9,50 @@ import students from '../utils/StudentData.json'
 import { Box, Button, Grid, IconButton, Stack, Tooltip, Typography } from '@mui/material';
 import { DeleteOutline } from '@mui/icons-material';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
+import axios from 'axios';
+import { BACKEND_URL } from '../utils/constants';
+import { useEffect, useState } from 'react';
 
 export default function StudentTable() {
+  const [studentData, setStudentData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState()
+
+  useEffect(() => {
+    axios
+      .get(`${BACKEND_URL}/allStudents`)
+      .then((response) => {
+        setStudentData(response.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  const handleDeleteStudent = (id: string) => {
+    axios
+      .delete(`${BACKEND_URL}/delete/${id}`)
+      .then((response) => {
+        console.log("Post created successfully!");
+      })
+      .catch((err) => {
+        console.log("Error creating post");
+      });
+  }
+
+  const handleEditStudent = () => {
+    axios
+      .put(`${BACKEND_URL}/edit`, studentData)
+      .then((response) => {
+        console.log("Post created successfully!");
+      })
+      .catch((err) => {
+        console.log("Error creating post");
+      });
+  }
+
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', paddingTop: 10 }}>
       <Grid container direction='row' spacing={2}>
@@ -26,6 +68,7 @@ export default function StudentTable() {
           <Button
             style={{ justifyItems: 'right' }}
             variant="contained"
+            onClick={() => {}}
           >
             Add
           </Button>
@@ -61,13 +104,13 @@ export default function StudentTable() {
                 <TableCell align='right'>
                   <Stack direction='row' spacing={2} justifyContent={'right'} alignItems={'center'}>
                     <Tooltip title="Edit">
-                      <IconButton>
+                      <IconButton onClick={() => handleEditStudent()}>
                         <ModeEditOutlineIcon />
                       </IconButton>
 
                     </Tooltip>
                     <Tooltip title="Delete">
-                      <IconButton>
+                      <IconButton onClick={() => handleDeleteStudent(row.id)}>
                         <DeleteOutline />
                       </IconButton>
 
