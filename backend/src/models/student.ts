@@ -1,25 +1,23 @@
-import { Entity, Column, BaseEntity, PrimaryColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  BaseEntity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { Lecturer } from "./lecturer";
 
 @Entity("student")
 export class Student extends BaseEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
   id!: number;
 
   @Column()
   name!: string;
 
   @Column()
-  gender!: string;
+  email!: string;
 
-  @Column()
-  address!: string;
-
-  @Column()
-  mobile!: string;
-
-  @Column({ type: "date" })
-  dob!: string;
-
-  @Column()
-  age!: number;
+  @ManyToOne(() => Lecturer, (lecturer) => lecturer.students)
+  lecturer!: Lecturer;
 }
