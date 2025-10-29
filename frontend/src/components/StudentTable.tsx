@@ -37,10 +37,11 @@ export default function StudentTable() {
       });
   }, []);
 
-  const handleDeleteStudent = (id: string) => {
+  const handleDeleteStudent = (id: number) => {
     axios.delete(`${BACKEND_URL}/student/delete/${id}`)
       .then((response) => {
         console.log("Post created successfully!");
+        setStudentData(prevRows => prevRows.filter(row => row.id !== id));
       })
       .catch((err) => {
         console.log("Error creating post");
