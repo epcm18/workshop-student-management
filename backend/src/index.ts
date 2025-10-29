@@ -4,6 +4,8 @@ import { DataSource } from "typeorm";
 import dotenv from "dotenv";
 import studentRoute from "./routes/studentRoute";
 import { Student } from "./models/student";
+import { Lecturer } from "./models/lecturer";
+import lecturerRoute from "./routes/lecturerRoute";
 
 dotenv.config();
 
@@ -19,7 +21,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DATABASE,
   synchronize: true,
   logging: true,
-  entities: [Student],
+  entities: [Student, Lecturer],
 });
 
 AppDataSource.initialize()
@@ -40,3 +42,4 @@ app.get("/", (_req: Request, res: Response) => {
 });
 
 app.use("/student", studentRoute);
+app.use("/lecturer", lecturerRoute);
