@@ -4,7 +4,6 @@ import { StudentService } from "../services/studentService";
 export class StudentController {
   static async addNewStudent(req: Request, res: Response) {
     try {
-      console.log("hello", req);
       const savedStudent = await StudentService.addNewStudent(req);
       res.status(201).json(savedStudent);
     } catch (error) {
