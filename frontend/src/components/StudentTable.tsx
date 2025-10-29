@@ -26,7 +26,7 @@ export default function StudentTable() {
   const [error, setError] = useState();
 
   useEffect(() => {
-    axios.get(`${BACKEND_URL}/allStudents`)
+    axios.get(`${BACKEND_URL}/student/allStudents`)
       .then((response) => {
         setStudentData(response.data);
         setLoading(false);
@@ -38,7 +38,7 @@ export default function StudentTable() {
   }, []);
 
   const handleDeleteStudent = (id: string) => {
-    axios.delete(`${BACKEND_URL}/delete/${id}`)
+    axios.delete(`${BACKEND_URL}/student/delete/${id}`)
       .then((response) => {
         console.log("Post created successfully!");
       })
