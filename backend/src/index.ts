@@ -11,6 +11,7 @@ dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 8000;
+var cors = require('cors')
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -23,6 +24,8 @@ export const AppDataSource = new DataSource({
   logging: true,
   entities: [Student, Lecturer],
 });
+
+app.use(cors());
 
 AppDataSource.initialize()
   .then(() => {
