@@ -23,14 +23,14 @@ This project is divided into two parts: **frontend** and **backend**.
 
 To keep your work separate and safe, please fork the main GitHub repository before cloning.
 
-1. Go to the main repository link (shared by the instructor).
+1. Go to the main repository link ([shared by the instructor](https://github.com/epcm18/workshop-student-management.git)).
 2. Click **“Fork”** (top-right corner of the GitHub page).
 3. This will create a copy of the project in your own GitHub account.
 4. Go to your repo in your github account.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/epcm18/workshop-student-management.git
+git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
 ```
 
@@ -86,5 +86,6 @@ You will learn to:
 ---
 
 Please ensure everything runs correctly before the session begins.
+
 
 
