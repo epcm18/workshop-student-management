@@ -21,7 +21,7 @@ This project is divided into two parts: **frontend** and **backend**.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
+git clone https://github.com/epcm18/workshop-student-management.git
 cd <your-repo>
 ```
 
@@ -77,3 +77,4 @@ You will learn to:
 ---
 
 Please ensure everything runs correctly before the session begins.
+
