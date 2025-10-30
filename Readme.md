@@ -19,6 +19,15 @@ Make sure PostgreSQL is running and accessible. You can use either the command l
 
 This project is divided into two parts: **frontend** and **backend**.
 
+### 🔀 Fork and Clone the Repository
+
+To keep your work separate and safe, please fork the main GitHub repository before cloning.
+
+1. Go to the main repository link (shared by the instructor).
+2. Click **“Fork”** (top-right corner of the GitHub page).
+3. This will create a copy of the project in your own GitHub account.
+4. Go to your repo in your github account.
+
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/epcm18/workshop-student-management.git
@@ -77,4 +86,5 @@ You will learn to:
 ---
 
 Please ensure everything runs correctly before the session begins.
+
 
