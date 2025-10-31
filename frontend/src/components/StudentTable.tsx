@@ -8,7 +8,6 @@ import Paper from "@mui/material/Paper";
 import AddStudent from "./AddStudent";
 import {
   Box,
-  Button,
   Grid,
   IconButton,
   Stack,
@@ -37,27 +36,6 @@ export default function StudentTable() {
         setLoading(false);
       });
   }, []);
-
-  const handleDeleteStudent = (id: number) => {
-    axios.delete(`${BACKEND_URL}/student/delete/${id}`)
-      .then((response) => {
-        console.log("Post created successfully!");
-        setStudentData(prevRows => prevRows.filter(row => row.id !== id));
-      })
-      .catch((err) => {
-        console.log("Error creating post");
-      });
-  };
-
-  const handleEditStudent = () => {
-    axios.put(`${BACKEND_URL}/edit`, studentData)
-      .then((response) => {
-        console.log("Post created successfully!");
-      })
-      .catch((err) => {
-        console.log("Error creating post");
-      });
-  };
 
   return (
     <Box
@@ -90,8 +68,10 @@ export default function StudentTable() {
               <TableCell>Id</TableCell>
               <TableCell align="right">Name</TableCell>
               <TableCell align="right">Lecturer</TableCell>
-              {/* <TableCell align="right">NIC</TableCell> */}
               <TableCell align="right">Email</TableCell>
+              {/*
+                ##TODO - Add NIC and Phone-number fields
+              */}
               <TableCell align="right">
                 <b>Actions</b>
               </TableCell>
@@ -105,6 +85,9 @@ export default function StudentTable() {
                   <TableCell align="right">{row.name}</TableCell>
                   <TableCell align="right">{row.lecturer}</TableCell>
                   <TableCell align="right">{row.email}</TableCell>
+                  {/*
+                    ##TODO - Add NIC and Phone-number fields
+                  */}
                   <TableCell align="right">
                     <Stack
                       direction="row"
@@ -113,12 +96,18 @@ export default function StudentTable() {
                       alignItems="center"
                     >
                       <Tooltip title="Edit">
-                        <IconButton onClick={() => handleEditStudent()}>
+                        {/*
+                          ##TODO - Add handleStudentEdit function to edit a student
+                        */}
+                        <IconButton>
                           <ModeEditOutlineIcon />
                         </IconButton>
                       </Tooltip>
                       <Tooltip title="Delete">
-                        <IconButton onClick={() => handleDeleteStudent(row.id)}>
+                        {/*
+                          ##TODO - Add handleStudentDelete function to delete a student
+                        */}
+                        <IconButton>
                           <DeleteOutline />
                         </IconButton>
                       </Tooltip>
