@@ -5,6 +5,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import AddStudent from "./AddStudent";
 import {
   Box,
   Button,
@@ -68,8 +69,8 @@ export default function StudentTable() {
         alignItems: 'stretch'
       }}
     >
-      <Grid container direction="row" spacing={2}>
-        <Grid size={{ xs: 6, md: 4 }}>
+      <Grid container direction="row" spacing={2} sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Grid size={{ xs: 6, md: 8 }} sx={{ textAlign: "left" }}>
           <Typography sx={{ flex: "1 1 100%" }} variant="h5">
             <b>Students Table</b>
           </Typography>
@@ -79,13 +80,7 @@ export default function StudentTable() {
           paddingBottom={6}
           sx={{ display: "flex", justifyContent: "right" }}
         >
-          <Button
-            style={{ justifyItems: "right" }}
-            variant="contained"
-            onClick={() => {}}
-          >
-            Add
-          </Button>
+          <AddStudent/>
         </Grid>
       </Grid>
       <TableContainer component={Paper}>
