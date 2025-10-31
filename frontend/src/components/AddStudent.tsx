@@ -16,6 +16,7 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BACKEND_URL } from "../utils/constants";
+import { Toast } from "./Toast";
 
 export default function AddStudent() {
   const [open, setOpen] = React.useState(false);
@@ -25,6 +26,8 @@ export default function AddStudent() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [openToast, setOpenToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
     axios
@@ -107,10 +110,15 @@ export default function AddStudent() {
       .post(`${BACKEND_URL}/student/add`, payLoad)
       .then((response) => {
         console.log("lecturers => ", response.data);
+        setToastMessage("Successfully added");
+        setOpenToast(true);
       })
       .catch((err) => {
         setErrors(err.message);
         setLoading(false);
+        setToastMessage(err.message);
+        setOpenToast(true);
+
       });
 
     handleClose();
@@ -121,6 +129,7 @@ export default function AddStudent() {
 
   return (
     <React.Fragment>
+      <Toast open={openToast} setOpen={setOpenToast} message={toastMessage} />
       <Button variant="outlined" onClick={handleClickOpen}>
         Add Student
       </Button>
@@ -134,16 +143,6 @@ export default function AddStudent() {
 
           <form onSubmit={handleSubmit} id="add-student-form" noValidate>
             <Stack spacing={1}>
-              <TextField
-                required
-                margin="dense"
-                id="id"
-                name="id"
-                label="Student ID"
-                type="text"
-                fullWidth
-                variant="standard"
-              />
               <TextField
                 required
                 margin="dense"

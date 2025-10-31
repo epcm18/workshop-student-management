@@ -83,7 +83,7 @@ export default function StudentTable() {
                 <TableRow key={row.id}>
                   <TableCell>{row.id}</TableCell>
                   <TableCell align="right">{row.name}</TableCell>
-                  <TableCell align="right">{row.lecturer}</TableCell>
+                  <TableCell align="right">{row.lecturer.name}</TableCell>
                   <TableCell align="right">{row.email}</TableCell>
                   {/*
                     ##TODO - Add NIC and Phone-number fields
