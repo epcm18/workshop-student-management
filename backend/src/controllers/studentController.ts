@@ -23,22 +23,10 @@ export class StudentController {
   }
 
   static async editStudent(req: Request, res: Response) {
-    try {
-      const updatedStudent = await StudentService.editStudent(req);
-      res.status(200).json(updatedStudent);
-    } catch (error) {
-      console.error("Error editing student:", error);
-      res.status(500).json({ error: "Internal Server Error" });
-    }
+    // TODO: Implement edit student
   }
 
   static async deleteStudent(req: Request, res: Response) {
-    try {
-      await StudentService.deleteStudent(req);
-      res.status(204).end();
-    } catch (error) {
-      console.error("Error deleting student:", error);
-      res.status(500).json({ error: "Internal Server Error" });
-    }
+    // TODO: Implement delete student
   }
 }
