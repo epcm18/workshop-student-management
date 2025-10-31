@@ -18,7 +18,7 @@ import axios from "axios";
 import { BACKEND_URL } from "../utils/constants";
 import { Toast } from "./Toast";
 
-export default function AddStudent() {
+export default function AddStudent({ onStudentAdded }: { onStudentAdded?: () => void }) {
   const [open, setOpen] = React.useState(false);
   const [lecturer, setLecturer] = React.useState<string>("");
   const [lecturerList, setLecturerList] = useState([]);
@@ -112,6 +112,7 @@ export default function AddStudent() {
         console.log("lecturers => ", response.data);
         setToastMessage("Successfully added");
         setOpenToast(true);
+        if (onStudentAdded) onStudentAdded();
       })
       .catch((err) => {
         setErrors(err.message);

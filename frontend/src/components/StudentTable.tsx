@@ -25,8 +25,10 @@ export default function StudentTable() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
 
-  useEffect(() => {
-    axios.get(`${BACKEND_URL}/student/allStudents`)
+  const fetchStudents = () => {
+    setLoading(true);
+    axios
+      .get(`${BACKEND_URL}/student/allStudents`)
       .then((response) => {
         setStudentData(response.data);
         setLoading(false);
@@ -35,6 +37,10 @@ export default function StudentTable() {
         setError(err.message);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchStudents();
   }, []);
 
   return (
@@ -58,7 +64,7 @@ export default function StudentTable() {
           paddingBottom={6}
           sx={{ display: "flex", justifyContent: "right" }}
         >
-          <AddStudent/>
+          <AddStudent onStudentAdded={fetchStudents}/>
         </Grid>
       </Grid>
       <TableContainer component={Paper}>
