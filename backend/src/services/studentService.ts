@@ -18,7 +18,9 @@ export class StudentService {
   static async getAllStudents(): Promise<Student[]> {
     try {
       const studentRepository = AppDataSource.getRepository(Student);
-      const students = await studentRepository.find();
+      const students = await studentRepository.find({
+        relations: ["lecturer"],
+      });
       return students;
     } catch (error) {
       console.error("Error getting all students:", error);
