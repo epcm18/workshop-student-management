@@ -64,7 +64,7 @@ Open another terminal, then from the `frontend` folder:
 ```bash
 npm run dev
 ```
-This starts the React application (Vite + Material-UI + Formik).
+This starts the React application (Vite + Material-UI ).
 
 ---
 
@@ -77,7 +77,7 @@ You will learn to:
 - Set up a working development environment.
 - Understand project structure (frontend & backend).
 - Make basic changes in UI components (e.g., button style, table column).
-- Validate user inouts using formiks.
+- Validate user input fields.
 - Create Database entitis and relationships.
 - Observe how CRUD operations connect from frontend → backend → database.
 - Test API endpoints using postman.
@@ -86,6 +86,7 @@ You will learn to:
 ---
 
 Please ensure everything runs correctly before the session begins.
+
 
 
 
